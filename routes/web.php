@@ -19,5 +19,9 @@ Route::middleware('auth')->group(function () {
 });
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard',[AdminController::class,'admin']);
+    Route::get('/customer',[AdminController::class,'customer']);
+    Route::get('/order',[AdminController::class,'order']);
+    Route::get('/product',[AdminController::class,'product']);
+    Route::get('/AddProduct',[AdminController::class,'Addproduct']);
 });
 require __DIR__.'/auth.php';
