@@ -155,10 +155,13 @@
                             <span class="d-none d-lg-inline-flex">{{ Auth::user()->name }}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item"><x-dropdown-link :href="route('profile.edit')">
+                            <a href="#" class="dropdown-item">
+                                <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
-                        </x-dropdown-link></a>
-                            <a href="#" class="dropdown-item">  <form method="POST" action="{{ route('logout') }}">
+                        </x-dropdown-link>
+                    </a>
+                            <a href="#" class="dropdown-item">  
+                                <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
                             <x-dropdown-link :href="route('logout')"
@@ -166,7 +169,8 @@
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
-                        </form></a>
+                        </form>
+                    </a>
                         </div>
                     </div>
                 </div>

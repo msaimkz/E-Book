@@ -31,7 +31,7 @@ class AuthenticatedSessionController extends Controller
             return redirect("admin/dashboard");
         }
         else{
-            return redirect("dashboard");
+            return redirect("E-Book/Home");
 
         }
 

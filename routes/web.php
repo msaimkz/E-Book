@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,7 +22,20 @@ Route::prefix('admin')->group(function () {
     Route::get('/dashboard',[AdminController::class,'admin']);
     Route::get('/customer',[AdminController::class,'customer']);
     Route::get('/order',[AdminController::class,'order']);
-    Route::get('/product',[AdminController::class,'product']);
-    Route::get('/AddProduct',[AdminController::class,'Addproduct']);
+    Route::get('/Addproduct',[AdminController::class,'product']);
+    Route::get('/product',[AdminController::class,'Showproduct']);
+    Route::post('/store-Product',[AdminController::class,'store']);
+    Route::get('/edit-Product/{id}',[AdminController::class,'edit']);
+    Route::get('/delete-Product/{id}',[AdminController::class,'destroy']);
+    Route::post('/update-Product/{id}',[AdminController::class,'update']);
+});
+Route::prefix('E-Book')->group(function () {
+    Route::get('/Home',[UserController::class,'home']);
+    Route::get('/Shop',[UserController::class,'product']);
+    Route::get('/About-Us',[UserController::class,'about']);
+    Route::get('/Contact-Us',[UserController::class,'contact']);
+    Route::get('/Blog',[UserController::class,'blog']);
+    Route::get('/Site-Map',[UserController::class,'site']);
+    Route::get('/Store-Locator',[UserController::class,'store']);
 });
 require __DIR__.'/auth.php';
