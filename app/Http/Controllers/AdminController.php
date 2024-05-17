@@ -33,6 +33,7 @@ class AdminController extends Controller
         $product->price = $request->price;
         $product->description = $request->description;
         $product->arthur = $request->author;
+        $product->Quality = $request->quality;
         $imageName = time().'.'.$request->image->extension();
         $request->image->move(public_path('images'), $imageName);
         $product->img = $imageName;
@@ -60,6 +61,7 @@ class AdminController extends Controller
         $product->price = $request->price;
         $product->description = $request->description;
         $product->arthur = $request->author;
+        $product->Quality = $request->quality;
         if ($request->hasFile('image'))
          {
             if (file_exists($product->img)) 

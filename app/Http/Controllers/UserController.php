@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\product;
 
 class UserController extends Controller
 {
     public function home(){
-        return view("User.index");
+        $products = product::where("Quality","popular")->get();
+        return view("User.index",compact("products"));
     }
     public function about(){
         return view("User.about");
@@ -26,5 +28,10 @@ class UserController extends Controller
     }
     public function site(){
         return view("User.site-map");
+    }
+    public function ProductDetail(int $id)
+    {
+        $products = product::find($id);
+        return view('User.productDetail',compact('products'));
     }
 }

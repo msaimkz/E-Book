@@ -32,9 +32,11 @@
         border: 1px solid #ccc;
         border-radius: 5px;
     }
-textarea{
-    height: 150px;
-}
+
+    textarea {
+        height: 150px;
+    }
+
     input[type="file"] {
         padding: 10px;
         border-radius: 5px;
@@ -47,13 +49,13 @@ textarea{
         border-radius: 5px;
         color: #fff;
         cursor: pointer;
-        background:#007DCC;
+        background: #007DCC;
     }
     </style>
 </head>
 
 <body>
-    
+
     <form method="POST" action="{{url('admin/store-Product')}}" enctype="multipart/form-data">
         @csrf
         <label for="book-name">Book Name:</label>
@@ -64,12 +66,20 @@ textarea{
             <option value="">Select Category</option>
             <option value="Story">Story</option>
             <option value="General-knowledge">General knowledge</option>
-            <option value="Coding">Coding</option>
+            <option value="proagramming">Proagramming</option>
         </select><br><br>
         <label for="book-status">Book Status:</label>
         <select id="book-status" name="status">
             <option value="available">Available</option>
             <option value="unavailable">Un-available</option>
+            <!-- Add more options here -->
+        </select><br><br>
+        <label for="book-status">Book Quality</label>
+        <select id="book-status" name="quality">
+            <option value="">Select Quality</option>
+            <option value="popular">Popular</option>
+            <option value="expensive">Expensive</option>
+            <option value="simple">Simple</option>
             <!-- Add more options here -->
         </select><br><br>
 

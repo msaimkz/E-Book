@@ -19,15 +19,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::prefix('admin')->group(function () {
-    Route::get('/dashboard',[AdminController::class,'admin']);
-    Route::get('/customer',[AdminController::class,'customer']);
-    Route::get('/order',[AdminController::class,'order']);
-    Route::get('/Addproduct',[AdminController::class,'product']);
-    Route::get('/product',[AdminController::class,'Showproduct']);
-    Route::post('/store-Product',[AdminController::class,'store']);
-    Route::get('/edit-Product/{id}',[AdminController::class,'edit']);
-    Route::get('/delete-Product/{id}',[AdminController::class,'destroy']);
-    Route::post('/update-Product/{id}',[AdminController::class,'update']);
+    Route::get('/dashboard',[AdminController::class,'admin'])->middleware("auth","admin");
+    Route::get('/customer',[AdminController::class,'customer'])->middleware("auth","admin");
+    Route::get('/order',[AdminController::class,'order'])->middleware("auth","admin");
+    Route::get('/Addproduct',[AdminController::class,'product'])->middleware("auth","admin");
+    Route::get('/product',[AdminController::class,'Showproduct'])->middleware("auth","admin");
+    Route::post('/store-Product',[AdminController::class,'store'])->middleware("auth","admin");
+    Route::get('/edit-Product/{id}',[AdminController::class,'edit'])->middleware("auth","admin");
+    Route::get('/delete-Product/{id}',[AdminController::class,'destroy'])->middleware("auth","admin");
+    Route::post('/update-Product/{id}',[AdminController::class,'update'])->middleware("auth","admin");
 });
 Route::prefix('E-Book')->group(function () {
     Route::get('/Home',[UserController::class,'home']);
@@ -37,5 +37,6 @@ Route::prefix('E-Book')->group(function () {
     Route::get('/Blog',[UserController::class,'blog']);
     Route::get('/Site-Map',[UserController::class,'site']);
     Route::get('/Store-Locator',[UserController::class,'store']);
+    Route::get('/Product-Detail/{id}',[UserController::class,'ProductDetail']);
 });
 require __DIR__.'/auth.php';

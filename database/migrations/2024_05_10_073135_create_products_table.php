@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('price');
             $table->string('status');
             $table->string('category');
-            $table->string('description');
+            $table->text('description');
+            $table->string('Quality');
             $table->string('img');
             $table->string('pdf');
             $table->timestamps();

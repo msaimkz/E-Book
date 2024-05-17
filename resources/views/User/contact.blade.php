@@ -43,7 +43,7 @@
                     </div>
                     <p>electric@domain.com</p>
                 </div>
-                <div class="email-card" data-aos="fade-right" data-aos-duration="1700">
+                <div class="email-card">
                     <div class="icon-box">
                         <i class="fa-solid fa-clock"></i>
                         <h1>Opening</h1>

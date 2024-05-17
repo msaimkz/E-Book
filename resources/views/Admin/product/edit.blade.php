@@ -84,6 +84,14 @@ textarea{
             <option value="unavailable" @if($product->status == 'unavailable') selected @endif>Un-available</option>
             <!-- Add more options here -->
         </select><br><br>
+        <label for="book-status">Book Quality</label>
+        <select id="book-status" name="quality">
+            <option value="">Select Quality</option>
+            <option value="popular" @if($product->Quality == 'popular') selected @endif>Popualar</option>
+            <option value="expensive" @if($product->Quality == 'expensive') selected @endif>Expensive</option>
+            <option value="simple" @if($product->Quality == 'simple') selected @endif>Simple</option>
+            <!-- Add more options here -->
+        </select><br><br>
 
         <label for="book-author">Book Author:</label>
         <input type="text" id="book-author" name="author" value="{{$product->arthur}}"><br><br>

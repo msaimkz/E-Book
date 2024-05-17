@@ -14,6 +14,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- bootsrap cdn -->
     <!-- css link -->
+    <link rel="stylesheet" href="{{asset('asset/user/swiper-bundle.min.css')}}" />
     <link rel="stylesheet" href="{{asset('asset/user/style.css')}}">
     <!-- css link -->
     <!-- Swiper cdn link -->
@@ -167,10 +168,9 @@
         </div>
     </div>
 </div>
+
     <!-- main-content-->
-    <!-- animation link  -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- animation link  -->
+
     <!-- swiper js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <!-- swiper js -->
